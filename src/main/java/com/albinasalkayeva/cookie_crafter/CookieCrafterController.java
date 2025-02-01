@@ -1,11 +1,9 @@
 package com.albinasalkayeva.cookie_crafter;
 
-import org.apache.commons.validator.routines.DomainValidator;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseCookie;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.util.UriUtils;
 
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
@@ -44,7 +42,7 @@ public class CookieCrafterController {
         ResponseCookie.ResponseCookieBuilder cookieBuilder =
                 ResponseCookie.from(encodeString(cookieName), encodeString(cookieValue));
 
-        if (domain != null && isValidDomain(domain)) {
+        if (domain != null) {
             cookieBuilder.domain(domain);
         }
         if (httpOnly) {
@@ -54,12 +52,15 @@ public class CookieCrafterController {
             cookieBuilder.maxAge(maxAge);
         }
         if (path != null) {
-            cookieBuilder.path(encodePath(path));
+            cookieBuilder.path(path);
         }
         if (secure) {
             cookieBuilder.secure(true);
         }
-        if (sameSite != null && isValidSameSiteAttribute(sameSite)) {
+        if (sameSite != null) {
+            if (!isValidSameSiteAttribute(sameSite)) {
+                throw new IllegalArgumentException("Invalid SameSite attribute: " + encodeString(sameSite));
+            }
             cookieBuilder.sameSite(sameSite);
         }
         ResponseCookie cookie = cookieBuilder.build();
@@ -74,16 +75,7 @@ public class CookieCrafterController {
         return sameSiteValues.contains(sameSite);
     }
 
-    private boolean isValidDomain(String domain) {
-        DomainValidator validator = DomainValidator.getInstance();
-        return validator.isValid(domain);
-    }
-
     private String encodeString(String str) {
         return URLEncoder.encode(str, StandardCharsets.UTF_8);
-    }
-
-    private String encodePath(String path) {
-        return UriUtils.encodePath(path, StandardCharsets.UTF_8);
     }
 }
