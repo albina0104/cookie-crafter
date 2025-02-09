@@ -1,5 +1,3 @@
-import { objectToQueryParams } from '../functions/objectToQueryParams';
-
 export function CreateCookieForm() {
   async function handleSubmit(e) {
     e.preventDefault();
@@ -30,7 +28,7 @@ export function CreateCookieForm() {
         Accept: 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded',
       },
-      body: objectToQueryParams(formData),
+      body: new URLSearchParams(formData),
     };
     if (e.target.elements.credentials.value !== 'not specified') {
       requestParams.credentials = e.target.elements.credentials.value;
