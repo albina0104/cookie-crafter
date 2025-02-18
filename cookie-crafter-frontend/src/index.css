@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;700&display=swap');
+
+:root {
+  --yellow: #f7c94d;
+  --dark-yellow: #e1a336;
+  --light-brown: #c1531d;
+  --brown: #502220;
+  --white: #fbffff;
+  --light-gray: #dfe8e6;
+  --gray: #a2aca4;
+  --black: #1f0910;
+}
+
 /* Because the default box-sizing is stupid... */
 *,
 *::before,
@@ -18,7 +31,9 @@ body,
 body {
   line-height: 1;
   -webkit-font-smoothing: antialiased;
-  font-size: 16px;
+  font-family: 'Tomorrow', serif;
+  background: linear-gradient(45deg, var(--black), var(--yellow));
+  color: var(--black);
 }
 
 body,
