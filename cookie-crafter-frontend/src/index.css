@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;700&display=swap');
 
 :root {
+  --light-yellow: #f5f7d4;
   --yellow: #f7c94d;
   --dark-yellow: #e1a336;
   --light-brown: #c1531d;

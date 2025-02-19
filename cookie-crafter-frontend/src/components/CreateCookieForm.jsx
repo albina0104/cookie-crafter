@@ -1,3 +1,4 @@
+import { Header } from './Header';
 import './createCookieForm.css';
 
 export function CreateCookieForm() {
@@ -42,8 +43,8 @@ export function CreateCookieForm() {
   return (
     <>
       <div>
-        <p>Create a cookie</p>
         <form onSubmit={handleSubmit} id='create-cookie-form'>
+          <Header />
           <fieldset>
             <legend>Cookie attributes:</legend>
 

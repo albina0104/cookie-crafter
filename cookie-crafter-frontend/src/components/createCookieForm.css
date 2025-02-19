@@ -10,7 +10,7 @@
   background: linear-gradient(45deg, var(--black), var(--brown));
   border-width: 0;
   border-radius: var(--radius);
-  color: var(--light-gray);
+  color: var(--light-yellow);
 }
 
 #create-cookie-form fieldset {
@@ -77,7 +77,7 @@
   margin: 1.25rem auto 0;
   padding: 0.938rem 3.438rem;
   background: linear-gradient(45deg, var(--light-brown), var(--brown));
-  color: #fff;
+  color: var(--light-yellow);
   border-width: 0;
   cursor: pointer;
   border-radius: var(--radius);
