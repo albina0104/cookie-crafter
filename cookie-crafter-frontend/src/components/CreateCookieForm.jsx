@@ -1,4 +1,5 @@
 import { Header } from './Header';
+import { InfoIcon } from './InfoIcon';
 import './createCookieForm.css';
 
 export function CreateCookieForm() {
@@ -46,7 +47,9 @@ export function CreateCookieForm() {
         <form onSubmit={handleSubmit} id='create-cookie-form'>
           <Header />
           <fieldset>
-            <legend>Cookie attributes:</legend>
+            <legend>
+              Cookie attributes <InfoIcon />
+            </legend>
 
             <label htmlFor='cookieName' className='cookie-attributes__label'>
               Cookie name
@@ -126,7 +129,9 @@ export function CreateCookieForm() {
             <br />
 
             <fieldset className='radiobutton-fieldset'>
-              <legend>SameSite</legend>
+              <legend>
+                SameSite <InfoIcon />
+              </legend>
 
               <label className='radiobutton-label'>
                 <input
@@ -172,10 +177,12 @@ export function CreateCookieForm() {
           </fieldset>
 
           <fieldset className='other-params-fieldset'>
-            <legend>Other request parameters:</legend>
+            <legend>Other request parameters</legend>
 
             <fieldset className='radiobutton-fieldset'>
-              <legend>Origin</legend>
+              <legend>
+                Origin <InfoIcon />
+              </legend>
 
               <label className='radiobutton-label'>
                 <input
@@ -200,7 +207,9 @@ export function CreateCookieForm() {
             </fieldset>
 
             <fieldset className='radiobutton-fieldset'>
-              <legend>Credentials</legend>
+              <legend>
+                Credentials <InfoIcon />
+              </legend>
 
               <label className='radiobutton-label'>
                 <input

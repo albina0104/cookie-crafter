@@ -1,5 +1,6 @@
 import logo from '../assets/cookie-crafter-logo-transparent-3.webp';
 import './header.css';
+import { InfoIcon } from './InfoIcon';
 
 export function Header() {
   return (
@@ -17,7 +18,7 @@ export function Header() {
             Cookie Crafter is your playground for hands-on testing!
           </strong>{' '}
           Choose attributes, create cookies, and inspect their behavior using
-          your browser&apos;s DevTools.
+          your browser&apos;s DevTools. <InfoIcon />
         </p>
       </div>
     </div>
