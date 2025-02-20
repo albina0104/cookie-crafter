@@ -11,6 +11,27 @@
   border-width: 0;
   border-radius: var(--radius);
   color: var(--light-yellow);
+
+  /* Make only form scrollable, to prevent body scrolling */
+  position: fixed;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Hide scrollbar */
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar */
+#create-cookie-form::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
 }
 
 #create-cookie-form fieldset {
