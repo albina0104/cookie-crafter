@@ -1,0 +1,138 @@
+:root {
+  --radius: 1.25rem;
+}
+
+#create-cookie-form {
+  border: 0.063rem solid #fff;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background: linear-gradient(45deg, var(--black), var(--brown));
+  border-width: 0;
+  border-radius: var(--radius);
+  color: var(--light-yellow);
+
+  /* Make only form scrollable, to prevent body scrolling */
+  position: fixed;
+  overflow-y: scroll;
+  overscroll-behavior: contain;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  /* Hide scrollbar */
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+/* Hide scrollbar */
+#create-cookie-form::-webkit-scrollbar {
+  /* WebKit */
+  width: 0;
+  height: 0;
+}
+
+#create-cookie-form fieldset {
+  border: 0.063rem solid var(--yellow);
+  border-radius: var(--radius);
+}
+
+#create-cookie-form legend {
+  color: var(--yellow);
+  font-weight: 700;
+}
+
+.cookie-attributes__label {
+  display: inline-block;
+  width: 30%;
+  text-align: right;
+  padding: 0.625rem;
+}
+
+.cookie-attributes__input {
+  display: inline-block;
+  width: 70%;
+  padding: 0.625rem;
+  margin: 0.313rem 0;
+  background: linear-gradient(45deg, var(--yellow), var(--dark-yellow));
+  color: var(--brown);
+  border-width: 0;
+  border-radius: var(--radius);
+}
+
+.cookie-attributes__checkbox {
+  margin: 1.25rem 0.625rem 0;
+  accent-color: var(--yellow);
+}
+
+.cookie-attributes__checkbox-label {
+  padding-right: 0.625rem;
+}
+
+#create-cookie-form .radiobutton-fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.625rem 1.25rem 0.938rem;
+  margin: 0.625rem;
+}
+
+#create-cookie-form .other-params-fieldset {
+  margin: 1.25rem 0;
+}
+
+#create-cookie-form .radiobutton-label {
+  padding-right: 1.563rem;
+  display: inline-block;
+}
+
+#create-cookie-form .radiobutton-label input {
+  margin-right: 0.375rem;
+  accent-color: var(--yellow);
+}
+
+.create-cookie-form__submit-button {
+  display: block;
+  margin: 1.25rem auto 0;
+  padding: 0.938rem 3.438rem;
+  background: linear-gradient(45deg, var(--light-brown), var(--brown));
+  color: var(--light-yellow);
+  border-width: 0;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+}
+
+.create-cookie-form__submit-button:hover {
+  background: linear-gradient(45deg, var(--yellow), var(--light-brown));
+}
+
+@media screen and (max-width: 37.5rem) {
+  .cookie-attributes__label {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .cookie-attributes__input {
+    display: block;
+    width: 100%;
+  }
+
+  #create-cookie-form .radiobutton-fieldset {
+    flex-direction: column;
+    padding-bottom: 0.313rem;
+  }
+
+  #create-cookie-form .radiobutton-label {
+    display: block;
+    padding-right: 0;
+    padding-bottom: 0.625rem;
+  }
+
+  #create-cookie-form .radiobutton-label input {
+    margin-right: 0.375rem;
+  }
+}

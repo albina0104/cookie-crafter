@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Tomorrow:wght@400;700&display=swap');
+
+:root {
+  --light-yellow: #f5f7d4;
+  --yellow: #f7c94d;
+  --dark-yellow: #e1a336;
+  --light-brown: #c1531d;
+  --brown: #502220;
+  --white: #fbffff;
+  --light-gray: #dfe8e6;
+  --gray: #a2aca4;
+  --black: #1f0910;
+}
+
+/* Because the default box-sizing is stupid... */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Tomorrow', serif;
+  background: linear-gradient(45deg, var(--black), var(--yellow));
+  color: var(--black);
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+/* Stop long words causing overflow */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
