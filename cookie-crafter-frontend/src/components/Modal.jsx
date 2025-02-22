@@ -9,7 +9,7 @@ export function Modal({ open, children, onClose }) {
     <>
       <div className='modal-overlay' onClick={onClose}></div>
       <div className='modal'>
-        <button className='modal__close-button' onClick={onClose}>
+        <button className='modal__close-button' onClick={onClose} type='button'>
           <img
             src={closeCircle}
             alt='Close'

@@ -7,7 +7,11 @@ export function InfoIcon() {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <>
-      <button onClick={() => setIsOpen(true)} className='info-button'>
+      <button
+        onClick={() => setIsOpen(true)}
+        className='info-button'
+        type='button'
+      >
         <img src={infoIcon} alt='Info' className='info-icon' />
       </button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
