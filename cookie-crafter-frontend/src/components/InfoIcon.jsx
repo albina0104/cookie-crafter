@@ -11,7 +11,10 @@ export function InfoIcon() {
         <img src={infoIcon} alt='Info' className='info-icon' />
       </button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-        Modal
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequuntur
+        adipisci illo at pariatur vel? Veniam quisquam non repudiandae, officia
+        aliquam ipsam neque soluta error perspiciatis quia odio, sint rem
+        repellendus!
       </Modal>
     </>
   );
