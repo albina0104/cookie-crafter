@@ -4,7 +4,7 @@ import { InfoIcon } from './InfoIcon';
 
 export function Header() {
   return (
-    <div id='header'>
+    <header id='header'>
       <h1>
         <img src={logo} alt='Cookie Crafter' id='cookie-crafter-logo' />
       </h1>
@@ -69,6 +69,6 @@ export function Header() {
           </InfoIcon>{' '}
         </p>
       </div>
-    </div>
+    </header>
   );
 }
