@@ -1,6 +1,8 @@
 import { Header } from './Header';
 import { InfoIcon } from './InfoIcon';
 import './createCookieForm.css';
+import cookieIcon from '../assets/cookie-icon.svg';
+import eraserIcon from '../assets/eraser-circle.svg';
 
 export function CreateCookieForm() {
   async function handleSubmit(e) {
@@ -327,9 +329,17 @@ export function CreateCookieForm() {
             </fieldset>
           </fieldset>
 
-          <button type='submit' className='create-cookie-form__submit-button'>
-            Create
-          </button>
+          <div className='create-cookie-form__button-container'>
+            <button type='submit' className='create-cookie-form__button'>
+              <img src={cookieIcon} />
+              Create cookie!
+            </button>
+
+            <button type='reset' className='create-cookie-form__button'>
+              <img src={eraserIcon} />
+              Reset form
+            </button>
+          </div>
         </form>
       </div>
     </>

@@ -37,7 +37,7 @@ export function Header() {
                 request parameters).
               </li>
               <li>
-                Click the <strong>&quot;Create&quot;</strong> button.
+                Click the <strong>&quot;Create cookie!&quot;</strong> button.
               </li>
               <li>
                 Inspect DevTools:

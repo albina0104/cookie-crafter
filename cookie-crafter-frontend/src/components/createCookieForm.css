@@ -93,10 +93,15 @@
   accent-color: var(--yellow);
 }
 
-.create-cookie-form__submit-button {
-  display: block;
-  margin: 1.25rem auto 0;
-  padding: 0.938rem 3.438rem;
+.create-cookie-form__button-container {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.create-cookie-form__button {
+  display: flex;
+  margin: 0;
+  padding: 0.938rem 2rem;
   background: linear-gradient(45deg, var(--light-brown), var(--brown));
   color: var(--light-yellow);
   border-width: 0;
@@ -105,7 +110,14 @@
   font-size: 1.2rem;
 }
 
-.create-cookie-form__submit-button:hover {
+.create-cookie-form__button img {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.313rem;
+}
+
+.create-cookie-form__button:hover {
   background: linear-gradient(45deg, var(--yellow), var(--light-brown));
 }
 
@@ -134,5 +146,14 @@
 
   #create-cookie-form .radiobutton-label input {
     margin-right: 0.375rem;
+  }
+
+  .create-cookie-form__button-container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .create-cookie-form__button {
+    margin-bottom: 1rem;
   }
 }
