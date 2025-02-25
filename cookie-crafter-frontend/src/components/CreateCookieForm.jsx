@@ -48,7 +48,40 @@ export function CreateCookieForm() {
           <Header />
           <fieldset>
             <legend>
-              Cookie attributes <InfoIcon />
+              Cookie attributes{' '}
+              <InfoIcon>
+                <h2>Cookie attributes</h2>
+                <p>Read about cookie attributes on MDN Docs:</p>
+                <ul>
+                  <li>
+                    <a
+                      href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      Using HTTP cookies
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cookie'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <code>Cookie</code> request header
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href='https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      <code>Set-Cookie</code> response header
+                    </a>
+                  </li>
+                </ul>
+              </InfoIcon>
             </legend>
 
             <label htmlFor='cookieName' className='cookie-attributes__label'>
@@ -129,9 +162,7 @@ export function CreateCookieForm() {
             <br />
 
             <fieldset className='radiobutton-fieldset'>
-              <legend>
-                SameSite <InfoIcon />
-              </legend>
+              <legend>SameSite</legend>
 
               <label className='radiobutton-label'>
                 <input
@@ -181,7 +212,22 @@ export function CreateCookieForm() {
 
             <fieldset className='radiobutton-fieldset'>
               <legend>
-                Origin <InfoIcon />
+                Origin{' '}
+                <InfoIcon>
+                  <h2>Origin</h2>
+                  <ul>
+                    <li>
+                      <strong>same origin</strong> - the request will be sent to
+                      the <code>{import.meta.env.VITE_SITE_DOMAIN}</code> domain
+                      (the same domain as this site)
+                    </li>
+                    <li>
+                      <strong>cross-origin</strong> - the request will be sent
+                      to the <code>{import.meta.env.VITE_API_DOMAIN}</code>{' '}
+                      domain (a different origin)
+                    </li>
+                  </ul>
+                </InfoIcon>
               </legend>
 
               <label className='radiobutton-label'>
@@ -208,7 +254,44 @@ export function CreateCookieForm() {
 
             <fieldset className='radiobutton-fieldset'>
               <legend>
-                Credentials <InfoIcon />
+                Credentials{' '}
+                <InfoIcon>
+                  <h2>Credentials</h2>
+                  <p>
+                    This is an option of the JavaScript Fetch API for making
+                    HTTP requests. It determines whether cookies will be sent
+                    with the request.
+                  </p>
+                  <p>
+                    Read more about the Fetch API on MDN Docs: <br />
+                    <a
+                      href='https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#including_credentials'
+                      target='_blank'
+                      rel='noreferrer'
+                    >
+                      Using the Fetch API - Including credentials
+                    </a>
+                  </p>
+                  <ul>
+                    <li>
+                      <strong>
+                        <code>include</code>
+                      </strong>{' '}
+                      - cookies will be sent with the request
+                    </li>
+                    <li>
+                      <strong>
+                        <code>omit</code>
+                      </strong>{' '}
+                      - cookies will not be sent with the request
+                    </li>
+                    <li>
+                      <strong>not specified</strong> (same as{' '}
+                      <code>same-origin</code>) - the browser will only send
+                      cookies with same-origin requests
+                    </li>
+                  </ul>
+                </InfoIcon>
               </legend>
 
               <label className='radiobutton-label'>

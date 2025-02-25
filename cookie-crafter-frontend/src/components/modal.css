@@ -45,3 +45,54 @@
 .modal__content {
   line-height: 1.6;
 }
+
+.modal__content h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.modal__content p + p {
+  margin-top: 0.5rem;
+}
+
+.modal ol ul {
+  margin-left: 1.5rem;
+}
+
+.modal li {
+  margin-bottom: 0.5rem;
+}
+
+.modal ul {
+  margin-top: 0.5rem;
+}
+
+.modal code {
+  background-color: rgba(255, 255, 204, 0.4);
+  padding: 0.125rem 0.25rem;
+  border-radius: var(--radius);
+}
+
+.modal a {
+  color: var(--brown);
+}
+
+.modal a:hover {
+  color: var(--light-brown);
+}
+
+@media screen and (max-width: 56.25rem) {
+  .modal {
+    width: 80%;
+  }
+
+  .modal__close-button {
+    top: 0.313rem;
+    right: 0.313rem;
+  }
+
+  .modal__content h2 {
+    font-size: 1.25rem;
+  }
+}

@@ -16,7 +16,7 @@ export function Modal({ open, children, onClose }) {
             className='modal__close-button__icon'
           />
         </button>
-        <div className='modal__content'>{children}</div>
+        <section className='modal__content'>{children}</section>
       </div>
     </>,
     document.getElementById('portal')

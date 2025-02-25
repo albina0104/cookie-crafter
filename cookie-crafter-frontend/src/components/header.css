@@ -25,6 +25,14 @@
   font-size: 0.938rem;
 }
 
+#header a {
+  color: var(--yellow);
+}
+
+#header a:hover {
+  color: var(--light-yellow);
+}
+
 @media screen and (max-width: 37.5rem) {
   #header {
     flex-direction: column;
