@@ -1,5 +1,6 @@
 import { Header } from './Header';
 import { InfoIcon } from './InfoIcon';
+import { Footer } from './Footer';
 import './createCookieForm.css';
 import cookieIcon from '../assets/cookie-icon.svg';
 import eraserIcon from '../assets/eraser-circle.svg';
@@ -340,6 +341,8 @@ export function CreateCookieForm() {
               Reset form
             </button>
           </div>
+
+          <Footer />
         </form>
       </div>
     </>
