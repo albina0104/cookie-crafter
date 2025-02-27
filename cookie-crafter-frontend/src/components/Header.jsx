@@ -6,7 +6,7 @@ export function Header() {
   return (
     <header id='header'>
       <h1>
-        <img src={logo} alt='Cookie Crafter' id='cookie-crafter-logo' />
+        <img src={logo} alt='Cookie Crafter' className='cookie-crafter-logo' />
       </h1>
       <div id='header__text'>
         <p>
