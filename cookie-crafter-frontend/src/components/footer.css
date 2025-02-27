@@ -26,6 +26,10 @@ footer .about-button {
   color: inherit;
 }
 
+footer .about-button:hover {
+  text-decoration: underline;
+}
+
 @media screen and (max-width: 37.5rem) {
   footer {
     flex-direction: column;
