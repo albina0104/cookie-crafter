@@ -30,6 +30,12 @@ footer .about-button:hover {
   text-decoration: underline;
 }
 
+.about-modal-content {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
 @media screen and (max-width: 37.5rem) {
   footer {
     flex-direction: column;
