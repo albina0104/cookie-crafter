@@ -10,6 +10,9 @@
   --light-gray: #dfe8e6;
   --gray: #a2aca4;
   --black: #1f0910;
+
+  --toastify-color-light: #f5f7d4;
+  --toastify-font-family: 'Tomorrow', serif;
 }
 
 /* Because the default box-sizing is stupid... */

@@ -1,3 +1,4 @@
+import { ToastContainer, toast } from 'react-toastify';
 import { Header } from './Header';
 import { InfoIcon } from './InfoIcon';
 import { Footer } from './Footer';
@@ -41,12 +42,28 @@ export function CreateCookieForm() {
       requestParams.credentials = e.target.elements.credentials.value;
     }
 
-    fetch(`http://${apiDomain}/api/createCookie`, requestParams);
+    fetch(`http://${apiDomain}/api/createCookie`, requestParams)
+      .then((response) => {
+        if (!response.ok) {
+          response.json().then((data) => {
+            toast.error(
+              `Error: ${data.errorMessage}. Response status: ${response.status}.`
+            );
+          });
+        } else {
+          toast.success(`You got a cookie! 🍪`);
+        }
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+        toast.error('An error occurred. Check the console for details.');
+      });
   }
 
   return (
     <>
       <div>
+        <ToastContainer />
         <form onSubmit={handleSubmit} id='create-cookie-form'>
           <Header />
           <fieldset>
