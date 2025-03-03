@@ -49,8 +49,7 @@ footer .about-button:hover {
 }
 
 .cookie-crafter-logo-big {
-  width: 50%;
-  height: auto;
+  height: 39%;
 }
 
 @media screen and (max-width: 37.5rem) {
@@ -70,8 +69,12 @@ footer .about-button:hover {
     flex-direction: column;
   }
 
-  .cookie-crafter-logo-big {
+  .about-modal-content .image-wrap {
     width: 70%;
+  }
+
+  .cookie-crafter-logo-big {
+    height: 100%;
   }
 
   .about-modal-content__text ul {
