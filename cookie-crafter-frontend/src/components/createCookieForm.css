@@ -121,6 +121,10 @@
   background: linear-gradient(45deg, var(--yellow), var(--light-brown));
 }
 
+.create-cookie-form__button:active {
+  transform: scale(0.95);
+}
+
 @media screen and (max-width: 37.5rem) {
   .cookie-attributes__label {
     display: block;
