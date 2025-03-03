@@ -22,16 +22,14 @@ export function Footer() {
         >
           About
         </button>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)}>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} big={true}>
           <h2>About</h2>
           <div className='about-modal-content'>
-            <p>
-              <img
-                src={logo}
-                alt='Cookie Crafter'
-                className='cookie-crafter-logo-big'
-              />
-            </p>
+            <img
+              src={logo}
+              alt='Cookie Crafter'
+              className='cookie-crafter-logo-big'
+            />
             <div className='about-modal-content__text'>
               <ul>
                 <li>Created by Albina Salkayeva</li>

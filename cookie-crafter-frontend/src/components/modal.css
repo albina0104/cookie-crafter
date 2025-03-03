@@ -9,11 +9,7 @@
 }
 
 .modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #fff;
+  position: absolute;
   padding: 3.125rem;
   z-index: 1000;
   border-radius: var(--radius);
@@ -24,6 +20,21 @@
     var(--yellow) 80%,
     var(--light-yellow) 100%
   );
+}
+
+.modal--small {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal--big {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 3rem auto;
+  width: 80%;
 }
 
 .modal__close-button {
@@ -83,7 +94,7 @@
 }
 
 @media screen and (max-width: 56.25rem) {
-  .modal {
+  .modal--small {
     width: 80%;
   }
 

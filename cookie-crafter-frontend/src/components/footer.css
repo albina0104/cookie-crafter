@@ -33,7 +33,24 @@ footer .about-button:hover {
 .about-modal-content {
   display: flex;
   gap: 2rem;
+  justify-content: center;
   align-items: center;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  margin: 2rem;
+
+  /* Hide scrollbar */
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.cookie-crafter-logo-big {
+  width: 50%;
+  height: auto;
 }
 
 @media screen and (max-width: 37.5rem) {
@@ -45,5 +62,20 @@ footer .about-button:hover {
   footer section:not(:last-child)::after {
     content: none;
     margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 48.75rem) {
+  .about-modal-content {
+    flex-direction: column;
+  }
+
+  .cookie-crafter-logo-big {
+    width: 70%;
+  }
+
+  .about-modal-content__text ul {
+    /* without it, list markers become invisible - ancestor's overflow hides them */
+    list-style-position: inside;
   }
 }
