@@ -2,20 +2,10 @@
   --radius: 1.25rem;
 }
 
-#create-cookie-form {
-  border: 0.063rem solid #fff;
-  max-width: 37.5rem;
-  margin: 0 auto;
-  padding: 1.25rem;
-  background: linear-gradient(45deg, var(--black), var(--brown));
-  border-width: 0;
-  border-radius: var(--radius);
-  color: var(--light-yellow);
-
-  /* Make only form scrollable, to prevent body scrolling */
+.create-cookie-form__container {
+  /* Make container fullscreen and scrollable, to prevent body background scrolling */
   position: fixed;
-  overflow-y: scroll;
-  overscroll-behavior: contain;
+  overflow: scroll;
   top: 0;
   right: 0;
   bottom: 0;
@@ -27,8 +17,19 @@
   -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
+#create-cookie-form {
+  border: 0.063rem solid #fff;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  padding: 1.25rem;
+  background: linear-gradient(45deg, var(--black), var(--brown));
+  border-width: 0;
+  border-radius: var(--radius);
+  color: var(--light-yellow);
+}
+
 /* Hide scrollbar */
-#create-cookie-form::-webkit-scrollbar {
+.create-cookie-form__container::-webkit-scrollbar {
   /* WebKit */
   width: 0;
   height: 0;

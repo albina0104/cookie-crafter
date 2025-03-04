@@ -71,7 +71,7 @@ export function CreateCookieForm() {
 
   return (
     <>
-      <div>
+      <div className='create-cookie-form__container'>
         <ToastContainer />
         <form onSubmit={handleSubmit} id='create-cookie-form'>
           <Header />
