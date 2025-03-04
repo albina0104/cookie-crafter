@@ -79,6 +79,10 @@
   margin-top: 0.5rem;
 }
 
+.modal ol {
+  list-style-position: inside;
+}
+
 .modal code {
   background-color: rgba(255, 255, 204, 0.4);
   padding: 0.125rem 0.25rem;

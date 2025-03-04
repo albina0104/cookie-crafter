@@ -66,6 +66,19 @@ export function Header() {
                 </ul>
               </li>
             </ol>
+
+            <p>
+              Note: The tool works with both HTTP and HTTPS. You can access the
+              site via{' '}
+              <a
+                href={`http://${import.meta.env.VITE_SITE_DOMAIN}`}
+              >{`http://${import.meta.env.VITE_SITE_DOMAIN}`}</a>{' '}
+              or{' '}
+              <a
+                href={`https://${import.meta.env.VITE_SITE_DOMAIN}`}
+              >{`https://${import.meta.env.VITE_SITE_DOMAIN}`}</a>
+              .
+            </p>
           </InfoIcon>{' '}
         </p>
       </div>

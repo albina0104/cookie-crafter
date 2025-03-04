@@ -23,6 +23,8 @@ export function CreateCookieForm() {
       formData.sameSite = e.target.elements.sameSite.value;
     }
 
+    const protocol = e.target.elements.protocol.value;
+
     let apiDomain;
     if (e.target.elements.origin.value == 'same origin') {
       apiDomain = import.meta.env.VITE_SITE_DOMAIN;
@@ -42,7 +44,7 @@ export function CreateCookieForm() {
       requestParams.credentials = e.target.elements.credentials.value;
     }
 
-    fetch(`http://${apiDomain}/api/createCookie`, requestParams)
+    fetch(`${protocol}://${apiDomain}/api/createCookie`, requestParams)
       .then((response) => {
         if (!response.ok) {
           response
@@ -236,6 +238,35 @@ export function CreateCookieForm() {
 
           <fieldset className='other-params-fieldset'>
             <legend>Other request parameters</legend>
+
+            <fieldset className='radiobutton-fieldset'>
+              <legend>
+                Protocol{' '}
+                <InfoIcon>
+                  <h2>Protocol</h2>
+                  <p>
+                    Determines whether the request is sent over an unencrypted
+                    (HTTP) or encrypted (HTTPS) connection.
+                  </p>
+                </InfoIcon>
+              </legend>
+
+              <label className='radiobutton-label'>
+                <input type='radio' id='http' name='protocol' value='http' />
+                HTTP
+              </label>
+
+              <label className='radiobutton-label'>
+                <input
+                  type='radio'
+                  id='https'
+                  name='protocol'
+                  value='https'
+                  defaultChecked
+                />
+                HTTPS
+              </label>
+            </fieldset>
 
             <fieldset className='radiobutton-fieldset'>
               <legend>
