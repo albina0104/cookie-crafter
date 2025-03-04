@@ -45,11 +45,18 @@ export function CreateCookieForm() {
     fetch(`http://${apiDomain}/api/createCookie`, requestParams)
       .then((response) => {
         if (!response.ok) {
-          response.json().then((data) => {
-            toast.error(
-              `Error: ${data.errorMessage}. Response status: ${response.status}.`
+          response
+            .json()
+            .then((data) => {
+              toast.error(
+                `Error: ${data.errorMessage}. Response status: ${response.status}.`
+              );
+            })
+            .catch(
+              toast.error(
+                `An error occurred. Response status: ${response.status}.`
+              )
             );
-          });
         } else {
           toast.success(`You got a cookie! 🍪`);
         }
