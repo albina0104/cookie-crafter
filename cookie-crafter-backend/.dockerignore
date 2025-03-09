@@ -1,0 +1,17 @@
+# Ignore the Dockerfile and Docker ignore file itself
+Dockerfile
+.dockerignore
+
+# Git and IDE files
+.git
+.gitignore
+.gitattributes
+.idea/
+
+# Maven build output
+target/
+
+# Maven wrapper binaries
+.mvn/
+mvnw
+mvnw.cmd

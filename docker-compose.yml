@@ -1,0 +1,26 @@
+services:
+  cookie-crafter-backend:
+    image: cookie-crafter-backend:latest
+    networks:
+      - cookie-crafter-network
+
+  cookie-crafter-frontend:
+    image: cookie-crafter-frontend:latest
+    networks:
+      - cookie-crafter-network
+
+  my-apache:
+    image: my-apache:latest
+    ports:
+      - '80:80'
+      - '443:443'
+    networks:
+      - cookie-crafter-network
+    volumes:
+      - /home/albina/ssl-certs:/usr/local/apache2/ssl-certs
+      - /home/albina/logs:/usr/local/apache2/logs
+
+networks:
+  cookie-crafter-network:
+    name: cookie-crafter-network
+    driver: bridge
