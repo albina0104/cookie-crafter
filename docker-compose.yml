@@ -3,6 +3,8 @@ services:
     image: cookie-crafter-backend:latest
     networks:
       - cookie-crafter-network
+    volumes:
+      - /home/albina/logs:/app/logs
 
   cookie-crafter-frontend:
     image: cookie-crafter-frontend:latest
