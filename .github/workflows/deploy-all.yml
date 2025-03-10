@@ -1,0 +1,37 @@
+name: Deploy Cookie Crafter project
+
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+
+jobs:
+  deploy-all:
+    runs-on: ubuntu-22.04
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/cookie-crafter-ssh
+          chmod 600 ~/.ssh/cookie-crafter-ssh
+          ssh-keyscan -H ${{ secrets.SERVER_DOMAIN }} >> ~/.ssh/known_hosts
+
+      - name: Upload docker-compose file to server
+        run: scp -i ~/.ssh/cookie-crafter-ssh docker-compose.yml ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_DOMAIN }}:/home/${{ secrets.SERVER_USERNAME }}/cookie-crafter/
+
+      - name: Deploy
+        run: |
+          ssh -i ~/.ssh/cookie-crafter-ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_DOMAIN }} << 'EOF'
+            echo "${{ secrets.GHCR_ACCESS_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+            cd /home/${{ secrets.SERVER_USERNAME }}/cookie-crafter
+            docker compose up -d
+          EOF
