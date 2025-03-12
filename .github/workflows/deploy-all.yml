@@ -33,5 +33,7 @@ jobs:
           ssh -i ~/.ssh/cookie-crafter-ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_DOMAIN }} << 'EOF'
             echo "${{ secrets.GHCR_ACCESS_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
             cd /home/${{ secrets.SERVER_USERNAME }}/cookie-crafter
+            docker compose down
+            docker rmi $(docker images -a -q)
             docker compose up -d
           EOF
