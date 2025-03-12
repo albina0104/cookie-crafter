@@ -19,7 +19,7 @@ services:
     networks:
       - cookie-crafter-network
     volumes:
-      - /home/albina/ssl-certs:/usr/local/apache2/ssl-certs
+      - /etc/letsencrypt/live/cookie-crafter.com/:/usr/local/apache2/ssl-certs
       - /home/albina/logs:/usr/local/apache2/logs
 
 networks:
