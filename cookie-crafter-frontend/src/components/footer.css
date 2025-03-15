@@ -52,6 +52,10 @@ footer .about-button:hover {
   height: 39%;
 }
 
+.nowrap {
+  white-space: nowrap;
+}
+
 @media screen and (max-width: 37.5rem) {
   footer {
     flex-direction: column;

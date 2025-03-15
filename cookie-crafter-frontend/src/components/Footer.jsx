@@ -60,7 +60,12 @@ export function Footer() {
               <p>
                 If you have any questions or feedback about the project, feel
                 free to reach out via email at{' '}
-                <a href='mailto:salkaeva.a@gmail.com'>salkaeva.a@gmail.com</a>!
+                <span className='nowrap'>
+                  <a href='mailto:albina@cookie-crafter.com'>
+                    albina@cookie-crafter.com
+                  </a>
+                  !
+                </span>
               </p>
             </div>
           </div>
