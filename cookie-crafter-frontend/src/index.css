@@ -11,6 +11,9 @@
   --gray: #a2aca4;
   --black: #1f0910;
 
+  --scrollbar-track-color: rgba(64, 64, 64, 0.1);
+  --scrollbar-thumb-color: rgba(64, 64, 64, 0.6);
+
   --toastify-color-light: #f5f7d4;
   --toastify-font-family: 'Tomorrow', serif;
 }
@@ -80,4 +83,17 @@ button,
 textarea,
 select {
   font: inherit;
+}
+
+*::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--scrollbar-track-color);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-color);
+  border-radius: 0.4rem;
 }

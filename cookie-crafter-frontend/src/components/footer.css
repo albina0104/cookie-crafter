@@ -41,11 +41,6 @@ footer .about-button:hover {
   bottom: 0;
   position: absolute;
   margin: 2rem;
-
-  /* Hide scrollbar */
-  overflow-y: scroll;
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* Internet Explorer 10+ */
 }
 
 .cookie-crafter-logo-big {
