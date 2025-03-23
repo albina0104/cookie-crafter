@@ -23,7 +23,6 @@ export function Footer() {
           About
         </button>
         <Modal open={isOpen} onClose={() => setIsOpen(false)} size='big'>
-          <h2>About</h2>
           <div className='about-modal-content'>
             <div className='image-wrap'>
               <img
@@ -33,8 +32,14 @@ export function Footer() {
               />
             </div>
             <div className='about-modal-content__text'>
+              <h2>About</h2>
               <ul>
-                <li>Created by Albina Salkayeva</li>
+                <li>
+                  Created by{' '}
+                  <span className='about-modal-content__text__author-name'>
+                    Albina Salkayeva
+                  </span>
+                </li>
                 <li>Logo generated with ChatGPT (DALL·E)</li>
                 <li>
                   Icons sourced from{' '}

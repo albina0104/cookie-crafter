@@ -52,6 +52,16 @@ footer .about-button:hover {
   height: 39%;
 }
 
+.about-modal-content__text__author-name {
+  font-weight: bold;
+  font-size: 1.125rem;
+}
+
+.about-modal-content__text ul {
+  list-style-position: inside;
+  margin-bottom: 1rem;
+}
+
 .nowrap {
   white-space: nowrap;
 }
@@ -71,6 +81,7 @@ footer .about-button:hover {
 @media screen and (max-width: 48.75rem) {
   .about-modal-content {
     flex-direction: column;
+    justify-content: initial;
   }
 
   .about-modal-content .image-wrap {
@@ -79,10 +90,5 @@ footer .about-button:hover {
 
   .cookie-crafter-logo-big {
     height: 100%;
-  }
-
-  .about-modal-content__text ul {
-    /* without it, list markers become invisible - ancestor's overflow hides them */
-    list-style-position: inside;
   }
 }
