@@ -47,6 +47,10 @@ footer .about-button:hover {
   height: 39%;
 }
 
+.about-modal-content__text {
+  padding-bottom: 2rem;
+}
+
 .about-modal-content__text__author-name {
   font-weight: bold;
   font-size: 1.125rem;
