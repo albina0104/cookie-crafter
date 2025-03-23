@@ -125,3 +125,14 @@
     font-size: 1.25rem;
   }
 }
+
+@media screen and (max-width: 37.5rem) {
+  .modal--small {
+    width: 90%;
+  }
+
+  .modal--big {
+    margin: 1rem auto;
+    width: 90%;
+  }
+}
