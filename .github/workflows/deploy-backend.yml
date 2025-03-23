@@ -1,0 +1,43 @@
+name: Deploy backend
+
+on:
+  workflow_dispatch:
+
+env:
+  REGISTRY: ghcr.io
+  CONTAINER_NAME: cookie-crafter-backend
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+
+jobs:
+  deploy-backend:
+    runs-on: ubuntu-22.04
+
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup SSH
+        env:
+          SSH_PASSPHRASE: ${{ secrets.SSH_PASSPHRASE }}
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan -H ${{ secrets.SERVER_DOMAIN }} >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          echo "echo $SSH_PASSPHRASE" > ~/.ssh_askpass && chmod +x ~/.ssh_askpass
+          echo "$SSH_PRIVATE_KEY" | tr -d '\r' | DISPLAY=None SSH_ASKPASS=~/.ssh_askpass ssh-add - > /dev/null
+
+      - name: Deploy
+        run: |
+          ssh ${{ secrets.SERVER_USERNAME }}@${{ secrets.SERVER_DOMAIN }} << 'EOF'
+            echo "${{ secrets.GHCR_ACCESS_TOKEN }}" | docker login ${{ env.REGISTRY }} -u ${{ github.actor }} --password-stdin
+            cd /home/${{ secrets.SERVER_USERNAME }}/cookie-crafter
+            docker stop ${{ env.CONTAINER_NAME }}
+            docker rm ${{ env.CONTAINER_NAME }}
+            docker rmi ${{ env.REGISTRY }}/${{ github.actor }}/${{ env.CONTAINER_NAME }}:latest
+            docker compose up -d ${{ env.CONTAINER_NAME }}
+          EOF
