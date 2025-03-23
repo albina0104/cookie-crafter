@@ -1,6 +1,7 @@
 services:
   cookie-crafter-backend:
     image: ghcr.io/albina0104/cookie-crafter-backend:latest
+    container_name: cookie-crafter-backend
     networks:
       - cookie-crafter-network
     volumes:
@@ -8,11 +9,13 @@ services:
 
   cookie-crafter-frontend:
     image: ghcr.io/albina0104/cookie-crafter-frontend:latest
+    container_name: cookie-crafter-frontend
     networks:
       - cookie-crafter-network
 
   my-apache:
     image: ghcr.io/albina0104/my-apache:latest
+    container_name: my-apache
     ports:
       - '80:80'
       - '443:443'
