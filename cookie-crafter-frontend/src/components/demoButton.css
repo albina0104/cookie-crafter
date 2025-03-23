@@ -31,3 +31,9 @@
   height: 1.25rem;
   margin-right: 0.313rem;
 }
+
+.demo-modal__video {
+  max-height: 90vh;
+  max-height: 90dvh;
+  margin: auto;
+}

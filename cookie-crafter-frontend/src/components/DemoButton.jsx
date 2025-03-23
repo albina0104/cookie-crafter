@@ -13,7 +13,7 @@ export function DemoButton() {
         Demo
       </button>
       <Modal open={isOpen} onClose={() => setIsOpen(false)} size='fullscreen'>
-        <video controls autoPlay loop>
+        <video className='demo-modal__video' controls autoPlay loop>
           <source src='/cookie-crafter-usage-demo.webm' type='video/webm' />
           Your browser does not support the video tag.
         </video>
