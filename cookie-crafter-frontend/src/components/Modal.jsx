@@ -9,7 +9,14 @@ export function Modal({ open, children, onClose, size }) {
     <>
       <div className='modal-overlay' onClick={onClose}></div>
       <div
-        className={'modal ' + (size == 'big' ? 'modal--big' : 'modal--small')}
+        className={
+          'modal ' +
+          (size == 'big'
+            ? 'modal--big'
+            : size == 'fullscreen'
+              ? 'modal--fullscreen'
+              : 'modal--small')
+        }
       >
         <button className='modal__close-button' onClick={onClose} type='button'>
           <img

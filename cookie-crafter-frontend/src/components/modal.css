@@ -10,7 +10,6 @@
 
 .modal {
   position: absolute;
-  padding: 3.125rem;
   z-index: 1000;
   border-radius: var(--radius);
   background: linear-gradient(
@@ -26,6 +25,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 3.125rem;
 }
 
 .modal--big {
@@ -34,7 +34,18 @@
   right: 0;
   bottom: 0;
   margin: 3rem auto;
+  padding: 3.125rem;
   width: 80%;
+}
+
+.modal--fullscreen {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0;
+  padding: 2.5rem;
+  overflow-y: auto;
 }
 
 .modal__close-button {
