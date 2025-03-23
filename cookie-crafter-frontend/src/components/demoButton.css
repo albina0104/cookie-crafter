@@ -1,0 +1,33 @@
+.demo-button {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 2rem;
+  background: linear-gradient(45deg, var(--light-brown), var(--brown));
+  color: var(--light-yellow);
+  border-width: 0;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.demo-button:hover {
+  background: linear-gradient(
+    45deg,
+    var(--light-brown) 0%,
+    var(--dark-yellow) 80%,
+    var(--light-brown) 100%
+  );
+}
+
+.demo-button:active {
+  transform: scale(0.95);
+}
+
+.demo-button img {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-right: 0.313rem;
+}

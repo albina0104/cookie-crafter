@@ -1,6 +1,7 @@
 import logo from '../assets/cookie-crafter-logo-transparent-3.webp';
 import './header.css';
 import { InfoIcon } from './InfoIcon';
+import { DemoButton } from './DemoButton';
 
 export function Header() {
   return (
@@ -28,7 +29,10 @@ export function Header() {
           Choose attributes, create cookies, and inspect their behavior using
           your browser&apos;s DevTools.{' '}
           <InfoIcon>
-            <h2>How to use the tool:</h2>
+            <div className='how-to-use-modal__header'>
+              <h2>How to use the tool</h2>
+              <DemoButton />
+            </div>
 
             <ol>
               <li>Open DevTools in your browser to record network requests.</li>

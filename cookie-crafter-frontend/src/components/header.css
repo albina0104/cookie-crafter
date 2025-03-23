@@ -33,6 +33,12 @@
   color: var(--light-yellow);
 }
 
+.how-to-use-modal__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 @media screen and (max-width: 37.5rem) {
   #header {
     flex-direction: column;
@@ -41,6 +47,11 @@
 
   #header h1 {
     margin-right: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .how-to-use-modal__header {
+    flex-direction: column;
     margin-bottom: 0.5rem;
   }
 }
