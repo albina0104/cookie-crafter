@@ -22,7 +22,7 @@ export function Footer() {
         >
           About
         </button>
-        <Modal open={isOpen} onClose={() => setIsOpen(false)} big={true}>
+        <Modal open={isOpen} onClose={() => setIsOpen(false)} size='big'>
           <h2>About</h2>
           <div className='about-modal-content'>
             <div className='image-wrap'>
