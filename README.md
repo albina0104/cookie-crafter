@@ -2,9 +2,11 @@
 
 Cookie Crafter is a tool for experimenting with HTTP cookies. Set custom attributes, create cookies, and observe their behavior in your browser’s DevTools - no need to set up a server yourself.
 
+## Project demo
+
 ![](demo/cookie-crafter-usage-demo.gif)
 
-## Table of Contents
+## Table of contents
 
 - [Project objectives](#project-objectives)
 - [Used technologies](#used-technologies)
@@ -172,10 +174,13 @@ Users can:
   }
   ```
 
+- At first I hid scrollbars, but then decided to make them visible and style them. Useful article: [How To Style Scrollbars with CSS - DigitalOcean](https://www.digitalocean.com/community/tutorials/css-scrollbars). But adding "Firefox" properties affected scrollbar behavior in Google Chrome in an unexpected way, so I did not use them.
+
 - Icons were sourced from SVG Repo:
 
   - info icon - https://www.svgrepo.com/svg/24584/info-icon
   - close icon - https://www.svgrepo.com/svg/495162/close-circle
+  - video icon - https://www.svgrepo.com/svg/535719/video
 
   There's no obligation to give any attribution if you use icons from SVG Repo, but they would appreciate this, so I added the SVG Repo link to my site.
 
