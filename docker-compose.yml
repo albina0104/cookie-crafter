@@ -25,6 +25,7 @@ services:
       - /etc/letsencrypt/live/cookie-crafter.com:/usr/local/apache2/ssl-certs/cookie-crafter.com
       - /etc/letsencrypt/archive/cookie-crafter.com:/usr/local/apache2/archive/cookie-crafter.com
       - /home/albina/logs:/usr/local/apache2/logs
+      - /home/albina/cookie-crafter/files:/usr/local/apache2/htdocs
 
 networks:
   cookie-crafter-network:
