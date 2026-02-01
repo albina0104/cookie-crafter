@@ -25,7 +25,14 @@ export function Modal({ open, children, onClose, size }) {
             className='modal__close-button__icon'
           />
         </button>
-        <section className='modal__content'>{children}</section>
+        <section
+          className={
+            'modal__content' +
+            (size == 'fullscreen' ? ' modal__content--centered' : '')
+          }
+        >
+          {children}
+        </section>
       </div>
     </>,
     document.getElementById('portal')
