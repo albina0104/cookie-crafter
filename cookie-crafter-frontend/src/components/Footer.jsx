@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <footer>
       <section>
-        <p>Cookie Crafter &copy; 2025</p>
+        <p>Cookie Crafter &copy; 2026</p>
       </section>
       <section>
         <p>Created by Albina Salkayeva</p>
